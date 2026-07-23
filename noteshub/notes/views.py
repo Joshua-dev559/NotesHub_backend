@@ -52,14 +52,14 @@ class NoteViewSet(viewsets.ModelViewSet):
         note = self.get_object()
         note.is_pinned = not note.is_pinned
         note.save()
-        return Response({"is_pinned": note.is_pinned})
+        return Response(self.get_serializer(note).data)
 
     @action(detail=True, methods=["post"])
     def archive(self, request, pk=None):
         note = self.get_object()
         note.is_archived = not note.is_archived
         note.save()
-        return Response({"is_archived": note.is_archived})
+        return Response(self.get_serializer(note).data)
 
     @action(detail=False, methods=["get"])
     def search(self, request):
