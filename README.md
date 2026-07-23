@@ -67,7 +67,7 @@ noteshub/
 
 ## API Documentation
 
-Base URL: `http://localhost:8000/api`
+Base URL: `http://localhost:8001/api`
 
 All endpoints except `/register/`, `/token/`, and `/token/refresh/` require:
 ```
